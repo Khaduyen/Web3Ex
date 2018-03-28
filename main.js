@@ -10,8 +10,6 @@ const web3 = new Web3("http://140.82.57.172:8545")
 function financialMfil(numMfil) {
     return Number.parseFloat(numMfil / 1e3).toFixed(3);
 }
-// Create an async function so I can use the "await" keyword to wait for things to finish
-const main = async () => {
     // This code was written and tested using web3 version 1.0.0-beta.29
     console.log(`web3 version: ${web3.version}`)
     // Who holds the token now?
@@ -390,5 +388,3 @@ const main = async () => {
     // The balance may not be updated yet, but let's check
     balance = await contract.methods.balanceOf(myAddress).call();
     console.log(`Balance after send: ${financialMfil(balance)} MFIL`);
-}
-main();
